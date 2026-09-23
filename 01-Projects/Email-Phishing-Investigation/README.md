@@ -27,8 +27,8 @@ The email claimed to originate from the Microsoft account team and warned the re
 
 Initial inspection identified several suspicious characteristics:
 
-- The sender address "no-reply@access-accsecurity.com" does not belong to an official Microsoft domain.
-- The "Reply-To" address was set to "sotrecognizd@gmail.com", which does not match the sender domain.
+- The sender address `no-reply@access-accsecurity.com` does not belong to an official Microsoft domain.
+- The "Reply-To" address was set to `sotrecognizd@gmail.com`, which does not match the sender domain.
 - The message used account security concerns and a suspicious sign-in alert to create a sense of urgency.
 - The email encouraged the recipient to interact with a "Report The User" button.
 - The email contained spelling and formatting inconsistencies, such as "Unusual sign.in activity" instead of "Unusual sign-in activity".
@@ -41,12 +41,12 @@ The email headers were examined to identify the sender infrastructure, authentic
 
 The header analysis identified the following findings:
 
-- The visible sender address was "no=reply@access-accsecurity.com", while the "Reply-To" address was "sotrecognizd@gmail.com".
-- The "Return-Path" was set to "bounce@thcultarfdes.co.uk", introducing another domain associated with the message.
+- The visible sender address was `no=reply@access-accsecurity.com`, while the "Reply-To" address was `sotrecognizd@gmail.com`.
+- The "Return-Path" was set to `bounce@thcultarfdes.co.uk`, introducing another domain associated with the message.
 - SPF returned "none", meaning the message did not receive a positive SPF authentication result.
 - DKIM returned "none", indicating that the message was not signed with DKIM.
 - DMARC returned "permerror", indicating a permanent error during DMARC evaluation
-- The earliest relevant external "Received" header showed the message being received from "thcultarfdes.co.uk" (89.144.44.2) by Microsoft email infrastructure.
+- The earliest relevant external "Received" header showed the message being received from `thcultarfdes.co.uk` (89.144.44.2) by Microsoft email infrastructure.
 - Subsequent "Received" headers showed the message passing through Microsoft/Outlook infrastructure before reaching the recipient.
 
 ### Step 3 - Threat Intelligence Analysis
@@ -82,7 +82,7 @@ The HTML source of the email was inspected to determine the actual behaviour of 
 
 ![Mailto link analysis](Screenshots/06-mailto-link-analysis.png)
 
-The analysis revealed that the button did not redirect the recipient to a Microsoft website. Instead, it used a "mailto:" link addressed to "sotrecognizd@gmail.com".
+The analysis revealed that the button did not redirect the recipient to a Microsoft website. Instead, it used a "mailto:" link addressed to `sotrecognizd@gmail.com`.
 
 The link also attempted to pre-populate the email with the subject "unusual signin activity" and the message body "Report The User".
 
@@ -96,11 +96,11 @@ The following indicators were extracted during the investigation:
 
 | Type | Indicator |
 | ------ | ------ |
-| Sender Email | "no-reply@access-accsecurity.com" |
-| Reply-To Email | "sotrecognizd@gmail.com" |
-| Return Path | "bounce@thcultarfdes.co.uk" |
-| Sender Domain | "access-accsecurity.com" |
-| Return Path Domain | "thcultarfdes.co.uk" |
+| Sender Email | `no-reply@access-accsecurity.com` |
+| Reply-To Email | `sotrecognizd@gmail.com` |
+| Return Path | `bounce@thcultarfdes.co.uk` |
+| Sender Domain | `access-accsecurity.com` |
+| Return Path Domain | `thcultarfdes.co.uk` |
 | Sender IP | "89.144.44.2" |
 | SHA-256 | "4fbf4c3d80aba156c59004c12c83ff53dd64c9cf7b7a6029e98fe1da0760783a" |
 
