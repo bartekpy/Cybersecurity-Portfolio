@@ -1,0 +1,21 @@
+ Email Phishing Investigation - Indicators
+ ===========================================
+
+[Sender]
+no-reply@access-accsecurity.com
+
+[Reply-To]
+sotrecognizd@gmail.com
+
+[Return-Path]
+bounce@thcultarfdes.co.uk
+
+[Domains]
+access-accsecurity.com
+thcultarfdes.co.uk
+
+[IP Addresses]
+89.144.44.2
+
+[SHA-256]
+4fbf4c3d80aba156c59004c12c83ff53dd64c9cf7b7a6029e98fe1da0760783a
