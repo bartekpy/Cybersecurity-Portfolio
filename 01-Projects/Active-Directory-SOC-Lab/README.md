@@ -198,6 +198,16 @@ This troubleshooting process demonstrated the importance of validating the effec
 
 <br>
 
+## Relevance to a Cybersecurity Analyst Role
+
+This project reflects several tasks relevant to a Cybersecurity Analyst working in a SOC environment. Windows authentication and process creation events provide valuable telemetry for investigating suspicious user and endpoint activity.
+
+Understanding events such as failed logons, successful authentication, and process execution can help an analyst identify potential brute-force attempts, compromised accounts, and suspicious command execution.
+
+The lab also demonstrates the importance of validating security controls and telemetry before relying on them during an investigation.
+
+<br>
+
 ## Conclusion
 
 This lab established a functional Active Directory environment with centralised security auditing for a domain-joined Windows workstation.
