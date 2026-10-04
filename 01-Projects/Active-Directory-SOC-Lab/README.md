@@ -208,8 +208,48 @@ The lab also demonstrates the importance of validating security controls and tel
 
 <br>
 
+## Security Monitoring Scenarios
+
+The Windows Security Events examined in this lab can help a SOC analyst
+identify and investigate several potential attack scenarios.
+
+### 1. Potential Password Guessing – Event ID 4625
+
+Multiple failed logon attempts targeting the same account within a short
+period may indicate password guessing or brute-force activity.
+
+An analyst should examine the number and frequency of failed attempts,
+targeted accounts, logon types and source addresses. Failed logons alone
+do not confirm an attack, as they may also result from legitimate user errors.
+
+### 2. Suspicious Account Activity – Event ID 4624
+
+Successful logons may require further investigation when they occur at
+unusual times, originate from unexpected sources or involve privileged accounts.
+
+An analyst can correlate successful logons with preceding failed attempts
+to identify potentially suspicious authentication patterns.
+
+### 3. Suspicious Process Execution – Event ID 4688
+
+Process creation events can help identify unusual commands or potentially
+malicious activity on Windows endpoints.
+
+For example, unexpected PowerShell execution involving encoded commands
+may warrant investigation. An analyst should review the process command
+line, parent process and associated user account to determine whether
+the activity is legitimate.
+
+These scenarios demonstrate how individual Windows Security Events can
+be correlated and analysed in context to support security investigations.
+
+<br>
+
 ## Conclusion
 
 This lab established a functional Active Directory environment with centralised security auditing for a domain-joined Windows workstation.
 Authentication and process activity were generated, validated, and analysed using Windows Security Events, providing practical experience with endpoint telemetry commonly used in SOC investigations.
-The next stage of the lab will extend this environment into Microsoft Sentinel, where Windows security logs will be centralised and analysed using KQL.
+This environment was subsequently extended into a
+[Microsoft Sentinel SOC Lab](../Microsoft-Sentinel-SOC-Lab/),
+where Windows Security Events were collected centrally,
+analysed using KQL and used to develop a custom detection rule.
